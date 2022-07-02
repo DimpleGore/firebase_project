@@ -4,7 +4,7 @@ const app = express();
 var bodyParser = require('body-parser')
 const admin = require('firebase-admin');
 var serviceAccount = require('./admin.json');
-
+require('dotenv').config();
 
 app.use(cors())
 app.use(express.json());
@@ -22,7 +22,7 @@ if(process.env.NODE_ENV == 'production'){
     const path = require('path');
     app.get('/',(req,res) => {
         app.use(express.static(path.resolve(__dirname,'client','build')))
-        app.sendFile((path.resolve(__dirname,'client','build','index.html')))
+        app.sendFile(path.resolve(__dirname,'client','build','index.html'))
     })
 }
 
