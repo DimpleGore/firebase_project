@@ -17,7 +17,7 @@ function Dashboard() {
     useEffect(() => {
 
         let token = localStorage.getItem('token')
-        axios.get('http://localhost:5000/getallusers', {
+        axios.get('http://localhost:5000/user/getallusers', {
             headers: { Authorization: token },
         }).then(resp => {
             setUser(resp.data.result)

@@ -23,7 +23,7 @@ function Signup(){
           return
         }
         try {
-          const record=await axios.post("http://localhost:5000/signup", { ...formValues });
+          const record=await axios.post("http://localhost:5000/user/signup", { ...formValues });
           console.log("come")
           console.log(record)
           localStorage.setItem("firstLogin", true);

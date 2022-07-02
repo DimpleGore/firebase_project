@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use("/", require('./Routes/routes'));
+app.use('/user',require('./Routes/routes'));
    
 if(process.env.NODE_ENV == 'production'){
 
